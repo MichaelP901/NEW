@@ -1,9 +1,0 @@
-
-user: michaelmp915
-pass: XbtymLRYn99hnJ1J
-
-
-
-test:
-login@example.com
-12345
