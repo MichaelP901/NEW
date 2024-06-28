@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/grades.js"></script>
+
+</head>
+<body>
+    <div id="heading">
+        <h2 id="title">GPA Calculator</h2>
+        <button id="Sign-Out">Log Out</button>
+    </div>
+
+    <div class="container">
+        <div id="grades-div">
+            <form action="" id="grades">
+
+                <div class="header">
+                    <input type="checkbox" id="selectAll" name="selectAll">
+                    <label for="selectAll" id="course-label">Course <br>(optional)</label>
+                    
+                    <input type="hidden" id="label-grade" name="label-grade">
+                    <label id="grade-label">Grade</label>
+                    <label id="credit-label">Credits</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" class="checkbox" name="course1">
+                    <input type="text" placeholder="Course" name="courseName1">
+                    <input type="text" placeholder="Grade" name="grade1" maxlength="3">
+                    <input type="text" placeholder="Credits" name="credits1" maxlength="2">
+                    <button type="button" class="remove-row">x</button>
+                </div>
+                
+            
+                <button type="button" id="add-row">+ Add row</button>
+                <div id="post-buttons">
+                    <button id="calculate">= Calculate</button>
+                    <button id="reset">x Reset</button>
+                </div>
+            </form>
+            <h3 id="grade-output-title">GPA</h3>
+            <div id="output-div">
+                <div id="GPA">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
