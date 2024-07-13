@@ -1,18 +1,20 @@
-// const name = require('ejs');
 const mongoose = require('mongoose');
 
-var schema = new mongoose.Schema({
-    email:{
-        type: String,
-        required: true,
-        unique: true
-    },
-    password:{
-        type: String,
-        required: true,
-    },
+const bookSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  author: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  }
 });
 
-const Userdb = mongoose.model('Userdb', schema);
+const Book = mongoose.model('Book', bookSchema);
 
-module.exports = Userdb;
+module.exports = Book;

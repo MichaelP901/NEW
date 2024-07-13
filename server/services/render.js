@@ -1,22 +1,29 @@
 const axios = require('axios');
 
-exports.LogIn = (req, res) => {
 
-    res.render('Login.ejs');
+exports.homeRoutes = (req, res) => {
+    // Make a get request to /api/users
+    axios.get('http://localhost:3000/api/users')
+        .then(function(response){
+            res.render('index', { users : response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
 }
 
-exports.SignUp = (req, res) => {
-    axios.get("http://localhost:3000/");
-
-    res.render('SignUp.ejs');
+exports.add_user = (req, res) =>{
+    res.render('add_user');
 }
 
-exports.Grades = (req, res) => {
-
-    res.render('grades.ejs');
-}
-
-exports.LogOut = (req, res) => {
-
-    res.render('Login.ejs');
+exports.update_user = (req, res) =>{
+    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+        .then(function(userdata){
+            res.render("update_user", { user : userdata.data})
+        })
+        .catch(err =>{
+            res.send(err);
+        })
 }
